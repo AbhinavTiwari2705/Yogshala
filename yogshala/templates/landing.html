@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Personalized Yoga</title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Classes</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="hero">
+		<h1>Personalized Yoga</h1>
+		<p>Find your inner peace with yoga practices designed just for you.</p>
+		<a href="#" class="cta-btn">Get started</a>
+	</section>
+
+	<section class="about">
+		<h2>About Us</h2>
+		<p>We are a team of dedicated yoga instructors committed to helping you achieve your physical, mental and spiritual goals through customized yoga practices. Our classes are tailored to your needs and preferences, ensuring that you get the most out of each session. Come join us and start your journey towards wellness today.</p>
+		<a href="#" class="cta-btn">Learn More</a>
+	</section>
+
+	<section class="classes">
+		<h2>Classes</h2>
+		<div class="class-container">
+			<div class="class-card">
+				<img src="class-1.jpg" alt="Class 1">
+				<h3>Class 1</h3>
+				<p>A gentle flow class designed for beginners.</p>
+				<a href="#" class="cta-btn">Sign Up</a>
+			</div>
+			<div class="class-card">
+				<img src="class-2.jpg" alt="Class 2">
+				<h3>Class 2</h3>
+				<p>A dynamic vinyasa class for intermediate practitioners.</p>
+				<a href="#" class="cta-btn">Sign Up</a>
+			</div>
+			<div class="class-card">
+				<img src="class-3.jpg" alt="Class 3">
+				<h3>Class 3</h3>
+				<p>A restorative yoga class for deep relaxation.</p>
+				<a href="#" class="cta-btn">Sign Up</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="contact">
+		<h2>Contact Us</h2>
+		<form action="#" method="POST">
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name" required>
+			<label for="email">Email:</label>
+			<input type="email" name="email" id="email" required>
+			<label for="message">Message:</label>
+			<textarea name="message" id="message" required></textarea>
+			<button type="submit">Send</button>
+		</form>
+	</section>
+
+	<footer>
+		<p>© 2023 Personalized Yoga. All rights reserved.</p>
+	</footer>
+</body>
+</html>
