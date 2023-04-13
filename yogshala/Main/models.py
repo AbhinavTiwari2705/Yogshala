@@ -16,7 +16,6 @@ class Pain(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     level = models.IntegerField()
-    # disease = models.ForeignKey(Disease, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -41,7 +40,7 @@ class yoga(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
     image = models.ImageField(upload_to='yoga/images/')
-    video = models.URLField()
+    video = models.CharField(max_length=1000)
     Disease=models.ManyToManyField(Disease)
     Pain=models.ManyToManyField(Pain)
 
