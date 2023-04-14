@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .models import yoga
+from .models import yoga,Pain,Disease
 from .forms import PainDiseaseForm
+from django.db.models import Q
 
 
 # Create your views here.
@@ -15,7 +16,8 @@ def suggest_yoga(request):
         if form.is_valid():
             selected_pains = form.cleaned_data['pain']
             selected_diseases = form.cleaned_data['disease']
-            suggested_yoga = yoga.objects.filter(Pain__in=selected_pains, Disease__in=selected_diseases)
+            suggested_yoga = yoga.objects.filter(Q(Pain__in=selected_pains) | Q(Disease__in=selected_diseases)).distinct()
+            print(suggested_yoga)
             return render(request, 'suggested_yoga.html', {'suggested_yoga': suggested_yoga})
     else:
         form = PainDiseaseForm()

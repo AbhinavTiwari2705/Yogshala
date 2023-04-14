@@ -1,0 +1,31 @@
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.form-group input[type="checkbox"]:checked {
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+.form-group input[type="checkbox"]:focus {
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+}
+
+.form-group input[type="checkbox"] + label {
+  cursor: pointer;
+}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Suggested Yoga Poses</h1>
+  {% if suggested_yoga %}
+    <p>Based on your selection, we recommend the following yoga poses:</p>
+    <ul>
+      {% for pose in suggested_yoga %}
+      
+        <div>
+        <li>{{ pose.name }}</li>
+        {{ pose.description }}
+        <<img src="{{ pose.image }}" class="" alt="">
+        
+        <iframe width="560" height="315" src="{{pose.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Sorry, we couldn't find any yoga poses that match your selection.</p>
+  {% endif %}
+{% endblock %}
