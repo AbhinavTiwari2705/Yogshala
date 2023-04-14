@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Disease(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField()
+    description = models.TextField(null=True,blank=True)
 
     def __str__(self):
         return self.name
@@ -14,8 +14,7 @@ class Disease(models.Model):
 
 class Pain(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField()
-    level = models.IntegerField()
+    description = models.TextField(null=True,blank=True)
 
     def __str__(self):
         return self.name
@@ -39,10 +38,10 @@ class User(User):
 class yoga(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
-    image = models.ImageField(upload_to='yoga/images/')
-    video = models.CharField(max_length=1000)
-    Disease=models.ManyToManyField(Disease)
-    Pain=models.ManyToManyField(Pain)
+    image = models.ImageField(upload_to='yoga/images/',blank=True)
+    video = models.CharField(max_length=1000,blank=True)
+    Disease=models.ManyToManyField(Disease, blank=True)
+    Pain=models.ManyToManyField(Pain,blank=True)
 
     def __str__(self):
         return self.name
