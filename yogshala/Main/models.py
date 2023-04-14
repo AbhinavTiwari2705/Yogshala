@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.html import format_html
 
 # Create your models here.
 
@@ -42,6 +43,10 @@ class yoga(models.Model):
     video = models.CharField(max_length=1000,blank=True)
     Disease=models.ManyToManyField(Disease, blank=True)
     Pain=models.ManyToManyField(Pain,blank=True)
+
+    def image_tag(self):
+        return format_html(
+            '<img src="/media/{}" style="width:40px;height:40px;border-radius:50%;"  />'.format(self.image))
 
     def __str__(self):
         return self.name
